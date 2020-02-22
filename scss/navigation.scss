@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  background: #000;
+}
+
+// Video
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.fullscreen-bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+// Title
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 48px;
+  font-family: "Playfair Display";
+  font-weight: 400;
+  text-align: center;
+}
+
+// Toggle button
+.toggle-btn {
+  position: fixed;
+  width: 40px;
+  height: 12px;
+  top: 40px;
+  right: 40px;
+  z-index: 1;
+
+  span {
+    background: #fff;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+
+    &:last-child {
+      margin-top: 12px;
+    }
+  }
+}
+
+// Menu
+.menu {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: #101010;
+  z-index: 0;
+  top: -100%;
+
+  ul {
+    list-style: none;
+    padding: 8em 0 0 2em;
+    text-align: left;
+
+    > li {
+      font-family: Poppins;
+
+      &:first-child {
+        color: grey;
+        font-size: 24px;
+      }
+
+      &:not(:first-child) {
+        color: #fff;
+        font-size: 42px;
+      }
+
+      > a {
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
+}
